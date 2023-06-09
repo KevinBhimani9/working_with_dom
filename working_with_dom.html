@@ -1,0 +1,58 @@
+<table>
+    <tr>
+        <td>Enter Number of Rows : </td>
+        <td><input type="number" id="row"></td>
+    </tr>
+
+    <tr>
+        <td>Enter Number of column : </td>
+        <td><input type="number" id="col"></td>
+    </tr>
+    <tr>
+        <td><input type="button" value="Generate Table " onclick="generateTable()"></input></td>
+    </tr>
+</table>
+
+<table border="1" id="root"></table>
+<style>
+    .size {
+        height: 100px;
+        width: 100px;
+    }
+</style>
+<script type="text/javascript">
+
+
+    const generateTable = () => {
+        let row = document.getElementById('row').value;
+        let col = document.getElementById('col').value;
+
+        if (row > 100 || col > 100) {
+            alert("please enter number under 100");
+            return false;
+
+        }
+        else {
+
+            for (let i = 1; i <= row; i++) {
+
+
+
+                let root = document.getElementById('root');
+                let tr = document.createElement('tr');
+
+                for (let j = 1; j <= col; j++) {
+                    let td = document.createElement('td');
+
+                    td.setAttribute('class', 'size')
+
+                    tr.appendChild(td);
+                }
+                root.appendChild(tr);
+            }
+
+        }
+    }
+
+
+</script>
